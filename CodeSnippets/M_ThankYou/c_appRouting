@@ -1,0 +1,7 @@
+//Add ThankYouComponent to Import statement
+
+,
+  {
+  path: 'thankYou/:id',
+  component: ThankYouComponent
+  }  

@@ -1,0 +1,3 @@
+ products : Product[] = [{"name":"iPhone 7", "category":"Phone", "description":"apple phone", "productId":1, "price":372.23, rating: 3},
+                            {"name":"Nexus 6", "category":"Phone", "description":"Google phone", "productId":2, "price":299.72, rating: 5,
+                            {"name":"Windows 8", "category":"Phone", "description":"Microsoft phone", "productId":3, "price":39.42, rating: 1}}]

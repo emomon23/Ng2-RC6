@@ -1,0 +1,5 @@
+ @Component({
+    selector: 'starRating',
+    templateUrl : '../app/sharedComponents/starComponent/star-component.html',
+    styleUrls: ['../app/sharedComponents/starComponent/star-component.css']
+ })

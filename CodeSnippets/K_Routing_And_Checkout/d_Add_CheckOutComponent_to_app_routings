@@ -1,0 +1,6 @@
+import { CheckOutComponent } from './checkout/checkout.components'
+
+{
+    path: 'checkout',
+    component: CheckOutComponent
+},

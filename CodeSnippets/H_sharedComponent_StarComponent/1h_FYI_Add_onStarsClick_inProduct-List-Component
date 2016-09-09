@@ -1,0 +1,3 @@
+ onStarsClick(message : string) : void {
+        alert(message);
+ }

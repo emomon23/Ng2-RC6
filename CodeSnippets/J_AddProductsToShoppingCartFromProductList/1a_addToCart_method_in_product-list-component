@@ -1,0 +1,3 @@
+addToCart(product: Product){
+    this._cart.addToCart(product, 1);
+}

@@ -1,0 +1,31 @@
+   addToCart(product: Product, quantity: number) :void {
+       var existingCartItem = this.findProduct(product.productId);
+  
+       if (existingCartItem == null)
+        {
+          var cartItem : CartItem = new CartItem(product.productId, product.name, product.description, product.price, quantity);
+          this.items.push(cartItem);
+         
+       }
+       else {
+           existingCartItem.quantity+=quantity;
+        }
+        
+        this.totalQuantityInCart+=quantity;
+        this.totalCartPrice+= product.price * quantity; 
+        
+     }
+ 
+     private findProduct(itemId: number) : CartItem {
+         var result : CartItem = null;
+ 
+          for (var i:number=0; i < this.items.length; i++){
+           if (this.items[i].itemId == itemId){
+               result = this.items[i];
+               break;
+           }
+         }
+         
+         return result;
+     }
+ 

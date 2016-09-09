@@ -1,0 +1,6 @@
+ selectCategory(categoryName: any) {  
+         this._selectedCateogry = categoryName ? categoryName.toLocaleLowerCase() : null; 
+     
+         this.filterdProducts = categoryName ? this.products.filter((product: Product) => 
+               categoryName == "Home" ||  product.category.toLocaleLowerCase().indexOf(this._selectedCateogry) !== -1) : this.products;
+    }

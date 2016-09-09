@@ -1,0 +1,4 @@
+ {
+      path:'placeOrder',
+      component: ShipToComponent
+  }

@@ -1,0 +1,2 @@
+<!-- Add star rating right under {{ product.description }} span -->
+<starRating (notify)='onStarsClick($event)' [rating]=product.rating></starRating>

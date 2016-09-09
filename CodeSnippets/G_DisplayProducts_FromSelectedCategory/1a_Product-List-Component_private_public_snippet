@@ -1,0 +1,4 @@
+private  _selectedCateogry: string = 'Home';
+     products: Product[];
+     filterdProducts: Product[];
+     errorMessage: string = '';

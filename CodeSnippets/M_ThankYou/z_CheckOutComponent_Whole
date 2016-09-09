@@ -1,0 +1,64 @@
+import { Component, OnInit } from '@angular/core'
+import { ActivatedRoute, Router } from '@angular/router'
+import { FormsModule } from  '@angular/forms'
+import { ShoppingCartService, CartItem} from '../sharedComponents/shoppingCart/shopping-cart-services';
+import { DataAccessLayerService } from '../dataAccessService/data-access-layer.service';
+import { Order } from './order'
+
+@Component({
+    templateUrl: 'app/checkout/shipping.component.template.html',
+ })
+ export class ShipToComponent {
+     order: Order;
+
+     constructor(private _cart: ShoppingCartService, private _dal: DataAccessLayerService, private _router: Router){
+         this.order = new Order();
+     }
+
+     submitOrder():void {
+         // this._dal.submitOrder(this._cart.items, this.order);
+         var confCode: string = "CF63232";
+         this._router.navigate(['/thankYou', confCode]);
+     }
+ } 
+
+
+ //******************** CheckOutComponent **************************************
+ @Component({
+    templateUrl: 'app/checkout/checkout.component.template.html',
+ })
+ export class CheckOutComponent {
+     cartItems : CartItem[];
+ 
+     constructor(private _cart: ShoppingCartService){
+         this.cartItems = _cart.items;
+     }
+    
+     cartIsEmpty() : boolean {
+         return this._cart.items.length == 0;
+     }
+ 
+     removeFromCart(item: CartItem){
+         this._cart.removeFromCart(item.itemId);
+     }
+ 
+     totalCartPrice() : number {
+         return this._cart.totalCartPrice;
+     }
+ } 
+
+@Component({
+    templateUrl : 'app/checkout/thankyou.component.template.html'
+})
+export class ThankYouComponent implements OnInit {
+    confirmationCode : string
+
+    constructor(private route: ActivatedRoute){}
+
+    ngOnInit() : void{
+        this.route.params.forEach((params) => {
+            this.confirmationCode = params['id'];
+        });
+    }
+}
+ 

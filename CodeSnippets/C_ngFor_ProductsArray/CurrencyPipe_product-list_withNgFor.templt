@@ -9,14 +9,14 @@
             <a class='btn btn-primary btn-block btn-default btn-lg'>Home</a>
         </div>
         <div class="col-xs-8">
-            <div class="well">
+            <div class="well" *ngFor='let product of products'>
                 <h3>
-                    <strong>Product Name</strong>
+                    <strong>{{ product.name }}</strong>
                     <span class="pull-right label label-primary">
-                       $100.95
+                       {{ product.price | currency:'USD':true:'1.2-2' }}
                     </span>
                 </h3>
-                <span class="lead">The best product EVER!</span>
+                <span class="lead">{{ product.description }}</span>
             </div>
         </div>
     </div>

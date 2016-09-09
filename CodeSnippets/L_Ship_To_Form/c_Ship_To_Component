@@ -1,0 +1,19 @@
+import { Order } from './order'
+
+
+@Component({
+    templateUrl: 'app/checkout/shipping.component.template.html',
+ })
+ export class ShipToComponent {
+     order: Order;
+
+     constructor(private _cart: ShoppingCartService, private _dal: DataAccessLayerService, private _router: Router){
+         this.order = new Order();
+     }
+
+     submitOrder():void {
+         // this._dal.submitOrder(this._cart.items, this.order);
+         var confCode: string = "CF63232";
+         this._router.navigate(['/thankYou', confCode]);
+     }
+ } 

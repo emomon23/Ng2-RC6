@@ -1,0 +1,6 @@
+import { FormsModule }   from '@angular/forms';
+
+@NgModule({
+  imports:      [ BrowserModule, HttpModule, routing, FormsModule ],
+
+  //Also import it into checkout service for ship to component

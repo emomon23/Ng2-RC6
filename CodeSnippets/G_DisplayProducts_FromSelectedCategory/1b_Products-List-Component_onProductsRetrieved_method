@@ -1,0 +1,4 @@
+ private onProductsRetrieved(products : Product[]): void {
+        this.products = products;
+        this.filterdProducts = this.products;
+ }

@@ -1,0 +1,9 @@
+export class Order {
+    shipToName: string;
+    shipToAddress: string;
+    shipToCity: string;
+    shipToState: string;
+    shipToZip: string;
+    shipToCountry: string;
+    giftWrap: boolean;
+}

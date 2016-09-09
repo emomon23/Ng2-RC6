@@ -1,0 +1,12 @@
+@Component({
+    selector: 'shopping-cart',
+    templateUrl:  '../app/sharedComponents/shoppingCart/cart-gui-component.html',
+
+})
+export class CartGuiComponent {
+   cart: ShoppingCartService;
+
+   constructor(cart: ShoppingCartService){
+       this.cart = cart;
+   }
+}

@@ -1,7 +1,11 @@
 {
     "files.exclude": {
         "**/.git": true,
-        "**/.DS_Store": true
+        "**/.DS_Store": true,
+        "**/*.map": true,
+        "*.map": true,
+        "**/*.js": true,
+        "*.js":true
      }, 
     "files.autoSave": "afterDelay"
 }

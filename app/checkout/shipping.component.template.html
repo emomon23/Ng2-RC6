@@ -1,0 +1,74 @@
+<h2>Check out now</h2>
+<p>Please enter you details, and we'll ship your goods right away!</p>
+
+<form name="shippingForm" #shippingForm="ngForm" novalidate>
+    <div class="well">
+        <h3>Ship to</h3>
+
+        <div class="form-group">
+            <label>Name</label>
+            <input  #name="ngModel" name="name" class="form-control" [(ngModel)]="order.shipToName" required />
+            <span class="error" [hidden]="name.valid "> <!--|| name.pristine" >-->
+                Please enter a name
+           </span>
+        </div>
+
+        <h3>Address</h3>
+
+        <div class="form-group">
+            <label>Street Address</label>
+            <input #shipToAddress='ngModel' name="shipToAddress" class="form-control" [(ngModel)]="order.shipToAddress" required />
+            <span class="error" [hidden]="shipToAddress.valid ">
+                Please enter a street
+            </span>
+        </div>
+
+        <div class="form-group">
+            <label>City</label>
+            <input #shipToCity='ngModel' name="shipToCity" class="form-control" [(ngModel)]="order.shipToCity" required />
+              <span class="error" [hidden]="shipToCity.valid ">
+                Please enter a city
+            </span>
+         </div>
+
+         <div class="form-group">
+            <label>State</label>
+            <input #state='ngModel' name="state" class="form-control" [(ngModel)]="order.shipToState" required />
+              <span class="error"  [hidden]="state.valid ">
+                Please enter a state
+            </span>
+         </div>
+
+         <div class="form-group">
+            <label>Zipcode</label>
+            <input #shipToZip='ngModel' name="zip" class="form-control" [(ngModel)]="order.shipToZip" required />
+
+            <span class="error" [hidden]="shipToZip.valid ">
+                Please enter a zipcode
+            </span>
+         </div>
+
+         <div class="form-group">
+            <label>Country</label>
+            <input #shipToCountry='ngModel' name="country" class="form-control" [(ngModel)]="order.shipToCountry" required />
+
+            <span class="error" [hidden]="shipToCountry.valid ">
+                Please enter a country
+            </span>
+         </div>
+
+        <h3>Options</h3>
+         <div class="checkbox">
+            <label>
+                <input name="giftwrap" type="checkbox" [(ngModel)]="order.giftwrap" />
+                Gift wrap these items.
+            </label>
+         </div>
+
+        <div class="text-center">
+            <button class="btn btn-primary" (click)='submitOrder()' [disabled]="!shippingForm.form.valid">Complete Order</button>
+        </div>
+        
+    </div>
+    
+</form>

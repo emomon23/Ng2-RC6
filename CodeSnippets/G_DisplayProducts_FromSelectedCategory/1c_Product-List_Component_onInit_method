@@ -1,0 +1,3 @@
+ngOnInit() : void{
+        this._dal.getProducts().subscribe(p => this.onProductsRetrieved(p));
+    }

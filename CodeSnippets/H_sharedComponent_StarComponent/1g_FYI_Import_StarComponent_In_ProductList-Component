@@ -1,0 +1,1 @@
+import { StarComponent } from '../sharedComponents/StarComponent/star-component'
