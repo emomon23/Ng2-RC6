@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Product } from './product'
 import { Observable } from 'rxjs/Rx';
 import { DataAccessLayerService } from '../dataAccessService/data-access-layer.service'
+import { ProductCategories } from '../pipes/products-categories.pipe'
 
 @Component({
   selector: 'product-list',

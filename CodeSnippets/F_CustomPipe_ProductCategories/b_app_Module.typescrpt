@@ -1,0 +1,7 @@
+
+import { ProductCategories } from './pipes/products-categories.pipe';
+
+@NgModule({
+  
+  declarations: [ AppComponent, ProductListComponent, ProductCategories ],
+ 
