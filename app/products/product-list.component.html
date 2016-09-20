@@ -8,14 +8,14 @@
 
     <div class="panel panel-default row">
         <div class="col-xs-3">
-            <a class='btn btn-primary btn-block btn-default btn-lg'>Home</a>
-            
-             <a *ngFor='let category of products | productCategories' class="btn btn-block btn-default btn-lg btn-primary" >
-                 {{ category }}
-             </a>
+                <a (click)="selectCategory('Home')" class='btn btn-primary btn-block btn-default btn-lg'>Home</a>
+
+                <a (click)="selectCategory(category)" *ngFor='let category of products | productCategories' class="btn btn-block btn-default btn-lg btn-primary" >
+                    {{ category }}
+                </a>
         </div>
         <div class="col-xs-8">
-             <div class="well" *ngFor='let product of products'>
+             <div class="well" *ngFor='let product of filterdProducts'>
                 <h3>
                     <strong>{{ product.name }}</strong>
                     <span class="pull-right label label-primary">

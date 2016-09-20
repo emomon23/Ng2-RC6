@@ -1,15 +1,3 @@
-import { Component, OnInit } from '@angular/core';
-import { Product } from './product'
-import { Observable } from 'rxjs/Rx';
-import { DataAccessLayerService } from '../dataAccessService/data-access-layer.service'
-import { ProductCategories } from '../pipes/products-categories.pipe'
-
-@Component({
-  selector: 'product-list',
-  templateUrl: './app/products/product-list.component.html'
-})
-export class ProductListComponent implements OnInit {
-
     private  _selectedCateogry: string = 'Home';
 
     products: Product[];
@@ -33,4 +21,3 @@ export class ProductListComponent implements OnInit {
         this.filterdProducts = categoryName ? this.products.filter((product: Product) => 
             categoryName == "Home" ||  product.category.toLocaleLowerCase().indexOf(this._selectedCateogry) !== -1) : this.products;
     }
-}
