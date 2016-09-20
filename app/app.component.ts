@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
+import { ProductListComponent } from './products/product-list.component'
 
 @Component({
-  selector: 'app-component',
-  template: `Hello MDC!`,
+  selector: 'root-component',
+  template: `<product-list></product-list>`,
+  
 })
 export class AppComponent { }
