@@ -5,7 +5,7 @@ import { ShoppingCartService } from './sharedComponents/shoppingCart/shopping-ca
 
 @Component({
   selector: 'root-component',
-  template: `<product-list></product-list>`,
+  template: '<router-outlet></router-outlet>',
   providers: [DataAccessLayerService, ShoppingCartService]
 })
 export class AppComponent { }

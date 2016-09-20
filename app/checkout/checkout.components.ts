@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute, Router } from '@angular/router'
 import { FormsModule } from  '@angular/forms'
-import { ShoppingCartService, CartItem} from '../sharedComponents/shoppingCart/shopping-cart-services';
+import { ShoppingCartService, CartItem} from '../sharedComponents/shoppingCart/shopping-cart-service';
 import { DataAccessLayerService } from '../dataAccessService/data-access-layer.service';
 
 

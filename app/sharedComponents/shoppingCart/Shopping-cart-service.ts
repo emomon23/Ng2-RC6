@@ -1,6 +1,24 @@
 import { Injectable, Component} from '@angular/core';
 import { Product} from '../../Products/Product';
-import { CartItem } from './CartItem';
+import { ModuleWithProviders }  from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+
+export class CartItem {
+     itemId: number;
+     name: string;
+     description: string;
+     price: number;
+     quantity: number;
+ 
+     constructor (id:number, name:string, description: string, price: number, quantity:number){
+         this.itemId = id;
+         this.name = name;
+         this.description = description;
+         this.price = price;
+         this.quantity = quantity
+     }
+ }
+
 
 @Injectable()
 export class ShoppingCartService {

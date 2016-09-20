@@ -7,8 +7,7 @@ import { StarComponent } from '../sharedComponents/starComponent/star-component'
 import { ShoppingCartService } from '../sharedComponents/shoppingCart/shopping-cart-service'
 
 @Component({
-  selector: 'product-list',
-  templateUrl: './app/products/product-list.component.html'
+    templateUrl: './app/products/product-list.component.html'
 })
 export class ProductListComponent implements OnInit {
 
