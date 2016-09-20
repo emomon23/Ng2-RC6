@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Rx';
 import { DataAccessLayerService } from '../dataAccessService/data-access-layer.service'
 import { ProductCategories } from '../pipes/products-categories.pipe'
 import { StarComponent } from '../sharedComponents/starComponent/star-component'
+import { ShoppingCartService } from '../sharedComponents/shoppingCart/shopping-cart-service'
 
 @Component({
   selector: 'product-list',
@@ -17,7 +18,7 @@ export class ProductListComponent implements OnInit {
     filterdProducts: Product[];
     errorMessage: string = '';
 
-    constructor(private _dal:DataAccessLayerService){}
+    constructor(private _dal:DataAccessLayerService, private _cart: ShoppingCartService){}
 
     ngOnInit() : void{
             this._dal.getProducts().subscribe(p => this.onProductsRetrieved(p));
@@ -38,4 +39,9 @@ export class ProductListComponent implements OnInit {
     onStarsClick(message : string) : void {
         alert(message);
     }
+
+    addToCart(product: Product){
+         this._cart.addToCart(product, 1);
+    }
+
 }

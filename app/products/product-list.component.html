@@ -5,6 +5,7 @@
     </div>
 
     <!-- SHOPPING CART HERE -->
+   <shopping-cart></shopping-cart>
 
     <div class="panel panel-default row">
         <div class="col-xs-3">
@@ -25,6 +26,9 @@
                
 
                  <!-- ADD TO CART BUTTON HERE -->
+                 <button (click)='addToCart(product)' class="btn btn-success pull-right">
+                    Add to cart
+                </button> 
                 <span class="lead">{{ product.description }}</span>
                 
                 <!-- STARS RATING HERE -->

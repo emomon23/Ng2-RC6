@@ -1,4 +1,14 @@
-   addToCart(product: Product, quantity: number) :void {
+import { Injectable, Component} from '@angular/core';
+import { Product} from '../../Products/Product'
+import { CartItem} from './CartItem'
+
+@Injectable()
+export class ShoppingCartService {
+    items: Array<CartItem> = new Array<CartItem>();
+    totalQuantityInCart: number = 0;
+    totalCartPrice: number = 0;
+
+    addToCart(product: Product, quantity: number) :void {
        var existingCartItem = this.findProduct(product.productId);
   
        if (existingCartItem == null)
@@ -13,9 +23,21 @@
         
         this.totalQuantityInCart+=quantity;
         this.totalCartPrice+= product.price * quantity; 
-        
+    }
+
+     
+     removeFromCart(itemId: number) : void {
+           var existingCartItem = this.findProduct(itemId);
+ 
+           if (existingCartItem != null){
+               this.totalCartPrice-= existingCartItem.price * existingCartItem.quantity;
+               this.totalQuantityInCart-= existingCartItem.quantity;
+               var index = this.items.indexOf(existingCartItem);
+               this.items.splice(index, 1);
+           }
      }
  
+     
      private findProduct(itemId: number) : CartItem {
          var result : CartItem = null;
  
@@ -28,4 +50,4 @@
          
          return result;
      }
- 
+ }

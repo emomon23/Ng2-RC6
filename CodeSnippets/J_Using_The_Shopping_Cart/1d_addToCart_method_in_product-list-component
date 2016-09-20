@@ -1,0 +1,7 @@
+import { ShoppingCartService } from '../sharedComponents/shoppingCart/shopping-cart-service'
+
+constructor(private _dal:DataAccessLayerService, private _cart: ShoppingCartService){}
+
+addToCart(product: Product){
+    this._cart.addToCart(product, 1);
+}

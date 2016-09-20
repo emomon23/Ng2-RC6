@@ -1,0 +1,7 @@
+//Only the COMPONENT need be registered here
+import { CartGuiComponent } from './sharedComponents/shoppingCart/shopping-cart-services';
+
+
+  //Declare Components, NOT SERVICES!!
+  declarations: [  CartGuiComponent ],
+
