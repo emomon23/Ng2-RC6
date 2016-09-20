@@ -4,26 +4,27 @@
          </h1>
     </div>
 
-    <-- SHOPPING CART HERE -->
-    
+    <!-- SHOPPING CART HERE -->
+
     <div class="panel panel-default row">
         <div class="col-xs-3">
             <a class='btn btn-primary btn-block btn-default btn-lg'>Home</a>
             More Categories Here
         </div>
         <div class="col-xs-8">
-            <div class="well" >
+             <div class="well" *ngFor='let product of products'>
                 <h3>
-                    <strong>Mike Emo Ng2 Presentation</strong>
+                    <strong>{{ product.name }}</strong>
                     <span class="pull-right label label-primary">
-                       $20,916.95
+                       {{ product.price | currency:'USD':true:'1.2-2' }}
                     </span>
                 </h3>
-         
-                <!-- ADD TO CART BUTTON HERE -->
-                <span class="lead">Best Presentaion Ever!</span>
+               
+
+                 <!-- ADD TO CART BUTTON HERE -->
+                <span class="lead">{{ product.description }}</span>
                 
                 <!-- STARS RATING HERE -->
-            </div>
+           </div>
         </div>
     </div>

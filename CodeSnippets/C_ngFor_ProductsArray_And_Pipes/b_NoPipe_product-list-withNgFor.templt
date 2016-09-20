@@ -1,0 +1,14 @@
+  <div class="well" *ngFor='let product of products'>
+                <h3>
+                    <strong>{{ product.name }}</strong>
+                    <span class="pull-right label label-primary">
+                       {{ product.price }}
+                    </span>
+                </h3>
+               
+
+                 <!-- ADD TO CART BUTTON HERE -->
+                <span class="lead">{{ product.description }}</span>
+                
+                <!-- STARS RATING HERE -->
+           </div>
