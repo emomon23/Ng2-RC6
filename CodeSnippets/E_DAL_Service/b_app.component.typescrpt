@@ -1,0 +1,8 @@
+//Here
+import { DataAccessLayerService } from './dataAccessService/data-access-layer.service'
+
+@Component({
+  //HERE
+  providers: [DataAccessLayerService]
+})
+

@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
 import { Product } from './product'
-import { Headers, Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
-import  'rxjs/add/operator/map'; 
-
+import { DataAccessLayerService } from '../dataAccessService/data-access-layer.service'
 
 @Component({
   selector: 'product-list',
@@ -11,17 +9,10 @@ import  'rxjs/add/operator/map';
 })
 export class ProductListComponent {
 
-    private _producttUrl =  'api/products/products.json';
+     products : Product[] = []
 
-    products : Product[] = []
-
-    constructor(private _http:Http){
-        this.getProducts().subscribe(p => this.products = p);
-    }
-
-    getProducts() : Observable<Product[]> {
-        return this._http.get(this._producttUrl)
-                   .map((response: Response) => <Product[]>response.json());
+    constructor(private _dal:DataAccessLayerService){
+        this._dal.getProducts().subscribe(p => this.products = p);
     }
 
 
