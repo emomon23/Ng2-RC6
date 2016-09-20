@@ -28,6 +28,7 @@
                 <span class="lead">{{ product.description }}</span>
                 
                 <!-- STARS RATING HERE -->
+                <starRating (notify)='onStarsClick($event)' [rating]=product.rating></starRating>
            </div>
         </div>
     </div>

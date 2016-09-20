@@ -1,0 +1,10 @@
+
+import { StarComponent } from './sharedComponents/starComponent/star-component'
+
+@NgModule({
+ 
+
+  //Declare Components, NOT SERVICES!!
+  //declarations: [ StarComponent ],
+  
+ 

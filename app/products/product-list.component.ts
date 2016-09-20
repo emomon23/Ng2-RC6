@@ -3,6 +3,7 @@ import { Product } from './product'
 import { Observable } from 'rxjs/Rx';
 import { DataAccessLayerService } from '../dataAccessService/data-access-layer.service'
 import { ProductCategories } from '../pipes/products-categories.pipe'
+import { StarComponent } from '../sharedComponents/starComponent/star-component'
 
 @Component({
   selector: 'product-list',
@@ -32,5 +33,9 @@ export class ProductListComponent implements OnInit {
 
         this.filterdProducts = categoryName ? this.products.filter((product: Product) => 
             categoryName == "Home" ||  product.category.toLocaleLowerCase().indexOf(this._selectedCateogry) !== -1) : this.products;
+    }
+
+    onStarsClick(message : string) : void {
+        alert(message);
     }
 }

@@ -15,6 +15,8 @@ import { Component, OnChanges, Input, Output, EventEmitter } from '@angular/core
      }
  
      onClick() : void {
-         this.notify.emit(`Current product rating: ${this.rating}`);        
+         if (this.notify){
+            this.notify.emit(`Current product rating: ${this.rating}`);
+         }        
      }
  } 
